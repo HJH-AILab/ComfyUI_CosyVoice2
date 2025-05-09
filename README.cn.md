@@ -1,7 +1,7 @@
 # ComfyUI_CosyVoice2
 A wrapper of <a href="https://github.com/FunAudioLLM/CosyVoice/">CosyVoice2</a>'s ComfyUI custom_nodes
 
-<p style="text-align:center;"><a href="README.md">English</a><span>中文</span></p>
+<p style="text-align:center;"><a href="README.md">English</a> | <span>中文</span></p>
 
 #安装
 1.
