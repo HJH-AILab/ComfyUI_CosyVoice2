@@ -1,17 +1,16 @@
 # ComfyUI_CosyVoice2
-A wrapper of <a href="https://github.com/FunAudioLLM/CosyVoice/">CosyVoice2</a>'s ComfyUI custom_nodes
+A wrapper of [CosyVoice2](https://github.com/FunAudioLLM/CosyVoice/ "CosyVoice2")'s ComfyUI custom_nodes
 
 <p style="text-align:center;"><a href="README.md">English</a> | <span>中文</span></p>
 
-#安装
-
-1. 
->git clone https://github.com/HJH-AILab/ComfyUI_CosyVoice2.git
+# 安装
+1.   
+>git clone <https://github.com/HJH-AILab/ComfyUI_CosyVoice2.git>
 >cd ComfyUI_CosyVoice2
->git clone ttps://github.com/FunAudioLLM/CosyVoice.git
+>git clone <https://github.com/FunAudioLLM/CosyVoice.git>
 
-2. 
->按照<a href="https://github.com/FunAudioLLM/CosyVoice/">CosyVoice2</a>的安装说明安装CosyVoice2,并下载模型.
+2.  
+>按照[CosyVoice2](https://github.com/FunAudioLLM/CosyVoice/ "CosyVoice2")的安装说明安装CosyVoice2,并下载模型.
 
 >*提示: 安装原项目建议删除requirements.txt中的版本号安装, 经测试可以在torch2.7.0+cuda128下运行.
 
@@ -23,10 +22,10 @@ A wrapper of <a href="https://github.com/FunAudioLLM/CosyVoice/">CosyVoice2</a>'
                                                     _from_deprecated_attn_block=_from_deprecated_attn_block, processor=processor, out_dim=out_dim)``
 >>即将参数改为显示输入即可兼容0.33.1
 
-3.
+3.  
 配置Comfyui extra_model_paths.yaml
 >添加:
 >cosyvoice: &lt;your path to CosyVoice2's models>
 
-#工作流
+# 工作流
 ![工作流](exsample/workflow.png "workflow")
