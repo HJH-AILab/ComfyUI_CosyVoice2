@@ -9,7 +9,6 @@ import librosa
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(ROOT_DIR)
 sys.path.append(f"{ROOT_DIR}/CosyVoice")
-# sys.path.append(f"{ROOT_DIR}/CosyVoice/third_party/Matcha-TTS")
 sys.path.insert(0, f"{ROOT_DIR}/CosyVoice/third_party/Matcha-TTS")
 
 from cosyvoice.cli.cosyvoice import CosyVoice, CosyVoice2
