@@ -32,3 +32,6 @@ A wrapper of <a href="https://github.com/FunAudioLLM/CosyVoice/">CosyVoice2</a>'
     cosyvoice: &lt;your path to CosyVoice2's models>
     </code>
 </p>
+
+#工作流
+<img style="wdith:100%" src="exsample/workflow.png"/>
