@@ -55,9 +55,6 @@ class CosyVoiceModel:
         elif model == "CosyVoice-300M-Instruct":
             cosyvoice = CosyVoice(os.path.join(models_root,"CosyVoice-300M-Instruct"), load_jit=False, load_trt=False, fp16=fp16)
 
-
-        print(cosyvoice.list_available_spks())
-
         return cosyvoice,
 
 
