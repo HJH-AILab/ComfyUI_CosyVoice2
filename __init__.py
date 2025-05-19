@@ -182,7 +182,6 @@ class CosyVoiceNode:
         
         return output_audio, 
 
-# from comfy_extras.nodes_audio import insert_or_replace_vorbis_comment
 from comfy_extras.nodes_audio import SaveAudio as SA
 class HJHCosyVoiceSaveAudio(SA):
     RETURN_TYPES = ("STRING",)
@@ -190,18 +189,9 @@ class HJHCosyVoiceSaveAudio(SA):
     OUTPUT_IS_LIST =(True,)
 
     FUNCTION = "save"
-    # def __init__(self):
-    #     super().__init__()
 
     def save(self, audio, filename_prefix="ComfyUI", prompt=None, extra_pnginfo=None):
-        # full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir)
-
         result = super().save_audio(audio, filename_prefix, prompt, extra_pnginfo)
-        # results.append({
-        #     "filename": file,
-        #     "subfolder": subfolder,
-        #     "type": self.type
-        # })
         ui_result = result["ui"]["audio"]
         paths = []
         for i in range(len(ui_result)):
@@ -209,7 +199,6 @@ class HJHCosyVoiceSaveAudio(SA):
             paths.append(path)
 
         result["result"] = paths,
-        print("******************",result)
         return result
 
 
