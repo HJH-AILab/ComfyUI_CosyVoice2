@@ -3,3 +3,4 @@ __pycache__/
 CosyVoice/
 .idea
 .DS_Store
+tokenizer.txt

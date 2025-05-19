@@ -182,6 +182,37 @@ class CosyVoiceNode:
         
         return output_audio, 
 
+# from comfy_extras.nodes_audio import insert_or_replace_vorbis_comment
+from comfy_extras.nodes_audio import SaveAudio as SA
+class HJHCosyVoiceSaveAudio(SA):
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("output_path",)
+    OUTPUT_IS_LIST =(True,)
+
+    FUNCTION = "save"
+    # def __init__(self):
+    #     super().__init__()
+
+    def save(self, audio, filename_prefix="ComfyUI", prompt=None, extra_pnginfo=None):
+        # full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir)
+
+        result = super().save_audio(audio, filename_prefix, prompt, extra_pnginfo)
+        # results.append({
+        #     "filename": file,
+        #     "subfolder": subfolder,
+        #     "type": self.type
+        # })
+        ui_result = result["ui"]["audio"]
+        paths = []
+        for i in range(len(ui_result)):
+            path = os.path.join(folder_paths.get_output_directory(),ui_result[i]["subfolder"], ui_result[i]["filename"])
+            paths.append(path)
+
+        result["result"] = paths,
+        print("******************",result)
+        return result
+
+
 # Add custom API routes, using router
 # from aiohttp import web
 # from server import PromptServer
@@ -195,9 +226,11 @@ class CosyVoiceNode:
 NODE_CLASS_MAPPINGS = {
     "CosyVoiceModel": CosyVoiceModel,
     "CosyVoiceNode": CosyVoiceNode,
+    "HJHCosyVoiceSaveAudio": HJHCosyVoiceSaveAudio,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "CosyVoiceModel": "HJH-CosyVoice - Load Model",
     "CosyVoiceNode": "HJH-CosyVoice - Generate Audio",
+    "HJHCosyVoiceSaveAudio": "HJH-CosyVoice - Save Audio",
 }
