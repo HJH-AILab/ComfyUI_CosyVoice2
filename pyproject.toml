@@ -1,5 +1,5 @@
 [project]
-name = "cosyvoice2"
+name = "ComfyUI_CosyVoice2"
 description = "A wrapper of [a/CosyVoice2](https://github.com/FunAudioLLM/CosyVoice/)'s ComfyUI custom_nodes"
 version = "1.0.0"
 license = {file = "LICENSE"}
@@ -9,6 +9,6 @@ Repository = "https://github.com/HJH-AILab/ComfyUI_CosyVoice2"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "hjh-ailab"
 DisplayName = "ComfyUI_CosyVoice2"
 Icon = ""
